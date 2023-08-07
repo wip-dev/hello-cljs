@@ -20,5 +20,5 @@ pom.xml.asc
 .hg/
 
 .cpcache
-.clj-kondo/cache
+.clj-kondo/.cache
 .lsp/
