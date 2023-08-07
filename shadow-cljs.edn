@@ -4,8 +4,13 @@
   "src/main"
   "src/test"]
 
+ :dev-http {8000 "public"}
+
  :dependencies
- []
+ [[lilactown/helix "0.1.10"]]
 
  :builds
- {}}
+ {:app {:target :browser
+        :output-dir "public/js"
+        :asset-path "/js"
+        :modules {:main {:entries [homepage.app]}}}}}
