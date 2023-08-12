@@ -10,9 +10,10 @@
    (d/p "created a couple of components, and hooks for side effects")])
 
 (defn point->li
-  [point]
+  [point i]
   (d/li
-   {:style {:font-size "x-large"
+   {:key i
+    :style {:font-size "x-large"
             :font-weight 100
             :margin-bottom "1rem"}}
    point))
@@ -20,5 +21,6 @@
 (defnc main-section
   []
   (d/main
-   (d/ul (map point->li points))))
-
+   (d/ul (map point->li
+              points
+              (range (count points))))))

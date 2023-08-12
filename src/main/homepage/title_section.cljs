@@ -12,7 +12,8 @@
   (let [[time set-time] (hooks/use-state (new js/Date))]
     (hooks/use-effect
       :once
-      (js/setInterval #(set-time (new js/Date)) 1000))
+      (let [interval (js/setInterval #(set-time (new js/Date)) 1000)]
+        #(js/clearInterval interval)))
     (d/aside
      {:style {:text-align "center"}}
      (d/h1
